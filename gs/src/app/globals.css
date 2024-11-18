@@ -33,6 +33,20 @@
     @apply hover:shadow-lg hover:w-[320px] hover:h-20 hover:text-2xl;
   }
 
+  .cards-mvv {
+    @apply w-1/4 flex flex-col items-center justify-around text-center rounded-lg shadow-lg bg-[#213238] h-[450px];
+    @apply transition-all duration-200 ease-in-out;
+    @apply hover:shadow-2xl hover:w-1/3 hover:bg-[#223f2e];
+
+    & h3 {
+      @apply text-2xl;
+    }
+
+    & p {
+      @apply w-10/12;
+    }
+  }
+
   .t-color {
     color: #346732;
   }
