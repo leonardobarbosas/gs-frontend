@@ -47,6 +47,16 @@
     }
   }
 
+  .cards-integrantes {
+    @apply flex flex-col items-center justify-around text-center rounded-lg shadow-lg bg-[#223f2e] h-[550px] w-[500px];
+    @apply transition-all duration-200 ease-in-out;
+    @apply hover:shadow-2xl hover:w-1/3 hover:bg-[#223f2e];
+
+    & .img-perfil {
+      @apply shadow-2xl rounded-lg;
+    }
+  }
+
   .t-color {
     color: #346732;
   }
