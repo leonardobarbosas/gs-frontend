@@ -47,6 +47,16 @@
     }
   }
 
+  .button-empresa {
+    @apply w-[200px] h-[60px] shadow-lg bg-[#315741] rounded-md;
+    @apply transition-all duration-200 ease-in-out;
+    @apply hover:shadow-2xl hover:bg-[#345e45];
+  }
+
+  .input-empresa {
+    @apply w-1/2 bg-slate-50 border-none h-10 rounded-md text-black outline-none pl-2;
+  }
+
   .cards-empresas {
     @apply w-1/4 flex flex-col items-center justify-around text-center rounded-lg shadow-lg bg-[#213238];
     @apply transition-all duration-200 ease-in-out;

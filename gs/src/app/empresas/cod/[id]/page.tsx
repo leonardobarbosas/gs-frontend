@@ -37,15 +37,55 @@ export default function Empresa({ params }: { params: { id: number } }) {
     unwrapParams();
   }, [params]);
 
+  const handleDelete = async (id: number) => {
+    try {
+      const response = await fetch(`/api/base-empresas/${id}`, {
+        method: "DELETE",
+      });
+
+      if (response.ok) {
+        const dados = await response.json();
+        setEmpresa(dados);
+        navigate.push("/empresas");
+      }
+    } catch (error) {
+      console.error("Erro ao deletar empresa", error);
+    }
+  };
+
   return (
     <div className="w-full flex items-center h-[80vh] justify-center">
-      <div className="w-11/12 flex flex-col bg-[#223f2e] rounded-xl shadow-2xl p-3 h-3/4">
-        <h1>Empresa</h1>
-        <p>Nome: {empresa.nmEmpresa}</p>
-        <p>CNPJ: {empresa.nrCnpj}</p>
-        <p>CEP: {empresa.nrCep}</p>
-        <button onClick={() => navigate.push("/empresas")}>Voltar</button>
-      </div>
+      <p></p>
+      <nav className="w-11/12 flex bg-[#223f2e] rounded-xl shadow-2xl  h-3/4">
+        <div className="w-1/2 flex flex-col items-center shadow-2xl justify-around">
+          <h1>Empresa</h1>
+          <p>Nome: {empresa.nmEmpresa}</p>
+          <p>CNPJ: {empresa.nrCnpj}</p>
+          <p>CEP: {empresa.nrCep}</p>
+          <div className="w-full flex justify-around">
+            <button
+              onClick={() => navigate.push("/empresas")}
+              className="button-empresa"
+            >
+              Voltar
+            </button>
+            <button
+              onClick={() => handleDelete(empresa.cdEmpresa)}
+              className="button-empresa"
+            >
+              Excluir
+            </button>
+          </div>
+        </div>
+        <form className="w-1/2 flex flex-col items-center shadow-2xl justify-around">
+          <input type="text" placeholder="Nome" className="input-empresa" />
+          <input type="number" placeholder="CNPJ" className="input-empresa" />
+          <input type="number" placeholder="CEP" className="input-empresa" />
+          <button type="submit" className="button-empresa">
+            Editar Empresa
+          </button>
+        </form>
+      </nav>
     </div>
   );
 }
