@@ -1,6 +1,7 @@
 "use client";
 
 import { TipoEmpresa } from "@/types";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function Empresas() {
@@ -26,20 +27,25 @@ export default function Empresas() {
   return (
     <div className="h-90vh w-full flex justify-center">
       <div className="flex w-11/12 items-center justify-around gap-3">
-        <h1 className="text-7xl w-1/2 t-color2 text-center">
-          Veja algumas empresas parceiras!
-        </h1>
-        <div className="flex w-1/2 overflow-x-auto">
-          <div className="flex whitespace-nowrap">
+        <div className="w-1/2 flex flex-col items-center justify-center gap-16">
+          <h1 className="text-7xl  t-color2 text-center">
+            Veja algumas empresas parceiras!
+          </h1>
+          <h2>Clique na empresa para ver mais!</h2>
+        </div>
+        <div className="flex w-1/2 overflow-x-auto custom-scrollbar h-[415px]">
+          <div className="flex whitespace-nowrap gap-4">
             {empresas.map((empresa) => (
-              <div
-                key={empresa.cdEmpresa}
-                className="bg-[#2762ca] rounded-lg shadow-none w-[300px] h-[400px] flex flex-col items-center justify-around"
-              >
-                <h2>Id: {empresa.cdEmpresa}</h2>
-                <p>Nome: {empresa.nmEmpresa}</p>
-                <p>Cep: {empresa.nrCep}</p>
-              </div>
+              <Link href={`/empresas/cod/${empresa.cdEmpresa}`}>
+                <div
+                  key={empresa.cdEmpresa}
+                  className="cards-empresas rounded-lg shadow-none w-[300px] h-[400px] flex flex-col items-center justify-around"
+                >
+                  <h2>Id: {empresa.cdEmpresa}</h2>
+                  <p>Nome: {empresa.nmEmpresa}</p>
+                  <p>Cep: {empresa.nrCep}</p>
+                </div>
+              </Link>
             ))}
           </div>
         </div>

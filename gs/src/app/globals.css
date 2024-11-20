@@ -47,6 +47,16 @@
     }
   }
 
+  .cards-empresas {
+    @apply w-1/4 flex flex-col items-center justify-around text-center rounded-lg shadow-lg bg-[#213238];
+    @apply transition-all duration-200 ease-in-out;
+    @apply hover:shadow-2xl hover:bg-[#223f2e];
+
+    & p {
+      @apply w-10/12;
+    }
+  }
+
   .cards-integrantes {
     @apply flex flex-col items-center justify-around text-center rounded-lg shadow-lg bg-[#223f2e] h-[550px] w-[500px];
     @apply transition-all duration-200 ease-in-out;
@@ -80,5 +90,22 @@
 
   .t-color2 {
     color: #cdcdcd;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    height: 8px; /* Altura da barra de rolagem horizontal */
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: none; /* Cor do fundo da barra de rolagem */
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #cdcdcd; /* Cor da barra de rolagem */
+    border-radius: 10px; /* Bordas arredondadas */
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #999; /* Cor da barra de rolagem ao passar o mouse */
   }
 }
