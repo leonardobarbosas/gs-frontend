@@ -37,14 +37,15 @@ export default function Empresa({ params }: { params: { id: number } }) {
     unwrapParams();
   }, [params]);
 
-
-  return(
-    <div>
-      <h1>Empresa</h1>
-      <p>Nome: {empresa.nmEmpresa}</p>
-      <p>CNPJ: {empresa.nrCnpj}</p>
-      <p>CEP: {empresa.nrCep}</p>
-      <button onClick={() => navigate.push("/empresas")}>Voltar</button>
+  return (
+    <div className="w-full flex items-center h-[80vh] justify-center">
+      <div className="w-11/12 flex flex-col bg-[#223f2e] rounded-xl shadow-2xl p-3 h-3/4">
+        <h1>Empresa</h1>
+        <p>Nome: {empresa.nmEmpresa}</p>
+        <p>CNPJ: {empresa.nrCnpj}</p>
+        <p>CEP: {empresa.nrCep}</p>
+        <button onClick={() => navigate.push("/empresas")}>Voltar</button>
+      </div>
     </div>
-  )
+  );
 }

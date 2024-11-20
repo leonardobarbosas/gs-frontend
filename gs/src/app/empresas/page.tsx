@@ -32,6 +32,11 @@ export default function Empresas() {
             Veja algumas empresas parceiras!
           </h1>
           <h2>Clique na empresa para ver mais!</h2>
+          <Link href={`empresas/cad`}>
+            <button className="button w-[280px] h-16 rounded-lg">
+              Cadastrar nova empresa
+            </button>
+          </Link>
         </div>
         <div className="flex w-1/2 overflow-x-auto custom-scrollbar h-[415px]">
           <div className="flex whitespace-nowrap gap-4">
