@@ -77,4 +77,8 @@
   .button {
     background: linear-gradient(to right, #346732, #346732);
   }
+
+  .t-color2 {
+    color: #cdcdcd;
+  }
 }

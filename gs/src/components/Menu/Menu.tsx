@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import logoImg from "../../img/logo-energia.png";
+import logoImg from "@/img/logo-energia.png";
 import Image from "next/image";
 
 export default function Menu() {
@@ -14,7 +14,7 @@ export default function Menu() {
           <Link href="/energias">Energias</Link>
         </li>
         <li>
-          <Image src={logoImg} alt="logo" width={50} height={50} />
+          <Image src={logoImg} alt="logo" className="w-[50px]" />
         </li>
         <li>
           <Link href="/empresas">Empresas</Link>
