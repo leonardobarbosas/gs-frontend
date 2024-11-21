@@ -4,3 +4,12 @@ export type TipoEmpresa = {
   nrCep: number;
   nrCnpj: number;
 };
+
+export type TipoEnergia = {
+  custo: number;
+  descricao: string;
+  idProjeto: number;
+  regiao: string;
+  status: string;
+  tipoFonte: string;
+};

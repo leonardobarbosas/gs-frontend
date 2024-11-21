@@ -46,6 +46,7 @@ export default function Empresa({ params }: { params: { id: number } }) {
       if (response.ok) {
         const dados = await response.json();
         setEmpresa(dados);
+        alert("Empresa deletada com sucesso!");
         navigate.push("/empresas");
       }
     } catch (error) {

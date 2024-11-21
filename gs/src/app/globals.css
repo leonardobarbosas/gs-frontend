@@ -67,6 +67,12 @@
     }
   }
 
+  .cards-energias {
+    @apply w-1/4 flex flex-col items-center justify-around text-center rounded-lg shadow-lg bg-[#213238];
+    @apply transition-all duration-200 ease-in-out;
+    @apply hover:shadow-2xl hover:bg-[#223f2e];
+  }
+
   .cards-integrantes {
     @apply flex flex-col items-center justify-around text-center rounded-lg shadow-lg bg-[#223f2e] h-[550px] w-[500px];
     @apply transition-all duration-200 ease-in-out;

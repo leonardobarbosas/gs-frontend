@@ -15,8 +15,7 @@ export async function DELETE(
     if (!response.ok) {
       throw new Error("Falha ao excluir dados");
     }
-    const dados: TipoEmpresa[] = await response.json();
-    return NextResponse.json(dados);
+    return NextResponse.json({message: "Dados excluídos com sucesso!"});
   } catch (error) {
     console.error("Falha na exclusão dos dados : ", error);
     return NextResponse.json(
