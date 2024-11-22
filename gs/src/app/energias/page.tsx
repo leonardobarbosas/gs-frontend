@@ -1,7 +1,6 @@
 "use client";
 
 import { TipoEnergia } from "@/types";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function Energias() {

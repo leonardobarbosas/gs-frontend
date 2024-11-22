@@ -1,3 +1,4 @@
+"use client"
 import francesco from "@/img/francescopng.jpg";
 import leobarbosa from "@/img/leobarbosa.jpg";
 import Image from "next/image";
