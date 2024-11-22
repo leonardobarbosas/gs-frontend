@@ -37,6 +37,31 @@ export default function Empresa({ params }: { params: { id: number } }) {
     unwrapParams();
   }, [params]);
 
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setEmpresa({ ...empresa, [name]: value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    try {
+      const response = await fetch(`/api/base-empresa/${params.id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(empresa),
+      });
+
+      if (response.ok) {
+        alert("Empresa atualizada com sucesso!");
+        navigate.push("/empresas");
+      }
+    } catch (error) {
+      console.error("Ocorreu um erro na atualização da empresa.", error);
+    }
+  };
+
   const handleDelete = async (id: number) => {
     try {
       const response = await fetch(`/api/base-empresas/${id}`, {
@@ -57,7 +82,7 @@ export default function Empresa({ params }: { params: { id: number } }) {
   return (
     <div className="w-full flex items-center h-[80vh] justify-center">
       <p></p>
-      <nav className="w-11/12 flex bg-[#223f2e] rounded-xl shadow-2xl  h-3/4">
+      <nav className="w-11/12 flex bg-[#223f2e] rounded-xl shadow-2xl h-3/4">
         <div className="w-1/2 flex flex-col items-center shadow-2xl justify-around">
           <h1>Empresa</h1>
           <p>Nome: {empresa.nmEmpresa}</p>
@@ -78,12 +103,36 @@ export default function Empresa({ params }: { params: { id: number } }) {
             </button>
           </div>
         </div>
-        <form className="w-1/2 flex flex-col items-center shadow-2xl justify-around">
-          <input type="text" placeholder="Nome" className="input-empresa" />
-          <input type="number" placeholder="CNPJ" className="input-empresa" />
-          <input type="number" placeholder="CEP" className="input-empresa" />
+        <form
+          className="w-1/2 flex flex-col items-center shadow-2xl justify-around"
+          onSubmit={handleSubmit}
+        >
+          <input
+            type="text"
+            placeholder="Nome"
+            className="input-empresa"
+            name="nmEmpresa"
+            value={empresa.nmEmpresa}
+            onChange={handleChange}
+          />
+          <input
+            type="number"
+            placeholder="CNPJ"
+            className="input-empresa"
+            name="nrCnpj"
+            value={empresa.nrCnpj}
+            onChange={handleChange}
+          />
+          <input
+            type="number"
+            placeholder="CEP"
+            className="input-empresa"
+            name="nrCep"
+            value={empresa.nrCep}
+            onChange={handleChange}
+          />
           <button type="submit" className="button-empresa">
-            Editar Empresa
+            Atualizar Empresa
           </button>
         </form>
       </nav>
