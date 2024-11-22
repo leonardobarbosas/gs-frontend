@@ -1,4 +1,6 @@
-const energias = [
+import { TipoRenovavel } from './types';
+
+export const energias: TipoRenovavel[]  = [
   {
     nome: "Energia Solar",
     descricao:

@@ -9,7 +9,7 @@ export default function Home() {
       </div>
       <div className="flex flex-col w-1/3 justify-center items-center gap-5">
         <div className="flex w-full items-center justify-around">
-          <Link href="/energias">
+          <Link href="/renovaveis">
             <button className="button rounded-3xl shadow-2xl h-16 w-[200px]">
               Descubra as Tecnologias
             </button>

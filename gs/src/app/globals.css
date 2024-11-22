@@ -83,6 +83,12 @@
     }
   }
 
+  .card {
+    @apply flex flex-col items-center justify-around text-center rounded-lg shadow-lg bg-[#223f2e] h-[400px] w-[300px];
+    @apply transition-all duration-200 ease-in-out;
+    @apply hover:shadow-2xl hover:w-[350px] hover:bg-[#223f2e];
+  }
+
   .t-color {
     color: #346732;
   }
