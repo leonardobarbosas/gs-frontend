@@ -41,11 +41,11 @@ export default function Empresas() {
         <div className="flex w-1/2 overflow-x-auto custom-scrollbar h-[415px]">
           <div className="flex whitespace-nowrap gap-4">
             {empresas.map((empresa) => (
-              <Link href={`/empresas/cod/${empresa.cdEmpresa}`}>
-                <div
-                  key={empresa.cdEmpresa}
-                  className="cards-empresas rounded-lg shadow-none w-[300px] h-[400px] flex flex-col items-center justify-around"
-                >
+              <Link
+                href={`/empresas/cod/${empresa.cdEmpresa}`}
+                key={empresa.cdEmpresa}
+              >
+                <div className="cards-empresas rounded-lg shadow-none w-[300px] h-[400px] flex flex-col items-center justify-around">
                   <h2>Id: {empresa.cdEmpresa}</h2>
                   <p>Nome: {empresa.nmEmpresa}</p>
                   <p>Cep: {empresa.nrCep}</p>
