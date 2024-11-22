@@ -45,7 +45,7 @@ export default function Empresa({ params }: { params: { id: number } }) {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const response = await fetch(`/api/base-empresa/${params.id}`, {
+      const response = await fetch(`/api/base-empresas/${params.id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
